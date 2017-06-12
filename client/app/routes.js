@@ -27,7 +27,7 @@ class Wrapper extends React.Component {
 
 export default () => (
     <App>
-        <Route path="/" component={Wrapper}/>
+        <Route path="/" exact={true} component={AnonPage}/>
         <Route path="/runtime" component={Wrapper}>
 
         </Route>

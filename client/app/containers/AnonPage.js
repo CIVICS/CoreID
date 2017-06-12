@@ -3,15 +3,11 @@ import { connect } from 'react-redux';
 import Anon from '../components/Anon';
 
 function mapStateToProps(state) {
-    return {
-        list: state.items.list.group(item => {
-            return item.status;
-        })
-    };
+    return state;
 }
 
 function mapDispatchToProps(dispatch) {
-    return {}; //bindActionCreators(CounterActions, dispatch);
+    return {};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Anon);
