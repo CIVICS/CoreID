@@ -21,7 +21,9 @@
     "package": "npm run build && build --publish never",
     "package-win": "npm run build && build --win --x64",
     "package-linux": "npm run build && build --linux",
-    "package-all": "npm run build && build -mwl"
+    "package-all": "npm run build && build -mwl",
+    "css": "npm-run-all css-compile",
+    "css-compile": "node-sass --output-style expanded --source-map true --precision 6 scss/main.scss app/app.global.css"
   },
   "browserslist": "electron 1.6",
   "build": {
@@ -152,9 +154,11 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^20.0.4",
     "jsdom": "^11.0.0",
-    "lato-font": "^3.0.0",
     "minimist": "^1.2.0",
     "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "postcss": "^6.0.1",
+    "postcss-cli": "^4.0.0",
     "redux-logger": "^3.0.6",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.5",

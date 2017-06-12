@@ -1,0 +1,19 @@
+@import 'variables';
+
+input {
+  width: 100%;
+  border: 0 none;
+  border-bottom: 1px solid $gray-lighter;
+  margin-top: 40px;
+  margin-bottom: 1px;
+  font-size: 18px;
+  color: $gray-light;
+  font-weight: 100;
+  outline: none;
+  transition: all 400ms;
+
+  &:focus {
+    border-bottom: 2px solid $action-primary;
+    margin-bottom: 0;
+  }
+}
