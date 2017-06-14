@@ -1,6 +1,8 @@
 @import 'variables';
 @import 'forms';
 @import 'actions';
+@import 'spacers';
+@import 'gadgets';
 
 @import "~font-awesome/css/font-awesome.css";
 @font-face {
@@ -60,4 +62,23 @@ body {
 
 .text-center {
   text-align: center;
+}
+
+
+.float-right {
+  float: right;
+}
+
+.container {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 160px;
+  right: 0;
+  overflow: auto;
+  padding: 0 10px;
+
+  &.white {
+    background-color: $white;
+  }
 }
