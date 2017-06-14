@@ -1,67 +1,27 @@
-export default function counter(state = {
+export default function items(state = {
     list: [
-        {"name": "Item 1", "status": 0},
-        {"name": "Item 2", "status": 1},
-        {"name": "Item 3", "status": 2},
-        {"name": "Item 5", "status": 0, malformed: true},
-        {"name": "Item 6", "status": 1},
-        {"name": "Item 7", "status": 1},
-        {"name": "Item 8", "status": 0},
-        {"name": "Item 9", "status": 2},
-        {"name": "Item 10", "status": 2},
-        {"name": "Item 11", "status": 2},
-        {"name": "Item 13", "status": 0, malformed: true},
-        {"name": "Item 15", "status": 0},
-        {"name": "Item 16", "status": 4},
-        {"name": "Item 17", "status": 0},
-        {"name": "Item 18", "status": 0},
         {
-            "name": "Item 4", "status": 3, signatures: [
-            {
-                "name": "Authority 1",
-                "hash": "AdwMgeerwtHoh-l192l60hp9wAHZFVJbLfD_UxMi70cwnZOYaRI1bKPWROc-mZZq wqT2SI-KGDKB34XO0aw_7XdtAG8GaSwFKdCAPZgoXD2YBJZCPEX3xKpRwcdOO8Kp EHwJjyqOgzDO7iKvU8vcnwNrmxYbSW9ERBXukOXolLzeO_Jn"
-            },
-            {
-                "name": "Authority 2",
-                "hash": "AdwMgeerwtHoh-l192l60hp9wAHZFVJbLfD_UxMi70cwnZOYaRI1bKPWROc-mZZq wqT2SI-KGDKB34XO0aw_7XdtAG8GaSwFKdCAPZgoXD2YBJZCPEX3xKpRwcdOO8Kp EHwJjyqOgzDO7iKvU8vcnwNrmxYbSW9ERBXukOXolLzeO_Jn"
-            },
-            {
-                "name": "Authority 3",
-                "hash": "AdwMgeerwtHoh-l192l60hp9wAHZFVJbLfD_UxMi70cwnZOYaRI1bKPWROc-mZZq wqT2SI-KGDKB34XO0aw_7XdtAG8GaSwFKdCAPZgoXD2YBJZCPEX3xKpRwcdOO8Kp EHwJjyqOgzDO7iKvU8vcnwNrmxYbSW9ERBXukOXolLzeO_Jn"
+            "iss": "https://authority.com",
+            "sub": "https://subject.com",
+            "iat": "2017-06-13T00:00:00+00:00",
+            "exp": "2018-06-13T00:00:00+00:00",
+            "atr": {
+                "name": "Sample Signed",
+                "payload": {
+                    "comment": "This is a signed statement"
+                },
+                "signatures": [
+                    {
+                        "protected": {
+                            "iss": "https://subject.com",
+                            "alg": "RS256",
+                            "typ": "JWS",
+                            "kid": "mykey"
+                        },
+                        "signature": "ZNYWm1SsmYUDzZOi8EHxNAnIuco1tTOR0iCpmZihXbufJkScJXq_tVpt2Vaw_GdsFJ4bvVp8bXkrwBqTSiSJ_6235ho4l84a79WRikTNvDOsNht203otqVBQmyvuvRqPTsXoQ--lQPVMclvHvsxEz5sq_mPzJJ3GKTPFclSr_ehniPIpP3T9GB3HQMdDNpqwaTiTpkFrr2y-8KmmoPI0IJJe-iTquJF2e8VQT8PTrK683dP8tbSbq971LA4EuZi__jG5-icYKBvv8uPenlh0ctcb8nDWSVsugTQV-ekdb_0dfoOO8PO_EjvmQsWfN0WBBGSJXfu52yQAWsOXmwAhWCwrqq5rAMF8mW0gk6iCVL80R_UzNeCIjVh_Zd6_BhvKqjAwNDdwT71caPN5eJFMbYnNrA_b_Tg7BZH97MrL9U6vqX3yK-NTN7xYCHHaFZje2gqJ6-REI1wDNQY5g3TZVf9TUlb0A1SXoh4WVgFFnnejlHH-KXLgduMqbxwLFVPa1XReIvTGdxAwxVVM_fuHaZfsrGH5KllYhmqoKv6ij5n9o-7P84Qodpv_2AoP7OJ67NTa6CjUbHKHx39aZDZP7GHIFiIKgAl5bdaxEDvorwSwP5BTvLXZCQIK0D0cv-iocWHBcdqDfCcYAUhFvWn4BsnL8Vd-3tNacVZFnVYt9FM"
+                    }
+                ]
             }
-        ]
-        },
-        {
-            "name": "Item 16", "status": 3, signatures: [
-            {
-                "name": "Authority 1",
-                "hash": "AdwMgeerwtHoh-l192l60hp9wAHZFVJbLfD_UxMi70cwnZOYaRI1bKPWROc-mZZq wqT2SI-KGDKB34XO0aw_7XdtAG8GaSwFKdCAPZgoXD2YBJZCPEX3xKpRwcdOO8Kp EHwJjyqOgzDO7iKvU8vcnwNrmxYbSW9ERBXukOXolLzeO_Jn"
-            },
-            {
-                "name": "Authority 2",
-                "hash": "AdwMgeerwtHoh-l192l60hp9wAHZFVJbLfD_UxMi70cwnZOYaRI1bKPWROc-mZZq wqT2SI-KGDKB34XO0aw_7XdtAG8GaSwFKdCAPZgoXD2YBJZCPEX3xKpRwcdOO8Kp EHwJjyqOgzDO7iKvU8vcnwNrmxYbSW9ERBXukOXolLzeO_Jn"
-            },
-            {
-                "name": "Authority 3",
-                "hash": "AdwMgeerwtHoh-l192l60hp9wAHZFVJbLfD_UxMi70cwnZOYaRI1bKPWROc-mZZq wqT2SI-KGDKB34XO0aw_7XdtAG8GaSwFKdCAPZgoXD2YBJZCPEX3xKpRwcdOO8Kp EHwJjyqOgzDO7iKvU8vcnwNrmxYbSW9ERBXukOXolLzeO_Jn"
-            }
-        ]
-        },
-        {
-            "name": "Item 12", "status": 3, signatures: [
-            {
-                "name": "Authority 1",
-                "hash": "AdwMgeerwtHoh-l192l60hp9wAHZFVJbLfD_UxMi70cwnZOYaRI1bKPWROc-mZZq wqT2SI-KGDKB34XO0aw_7XdtAG8GaSwFKdCAPZgoXD2YBJZCPEX3xKpRwcdOO8Kp EHwJjyqOgzDO7iKvU8vcnwNrmxYbSW9ERBXukOXolLzeO_Jn"
-            },
-            {
-                "name": "Authority 2",
-                "hash": "AdwMgeerwtHoh-l192l60hp9wAHZFVJbLfD_UxMi70cwnZOYaRI1bKPWROc-mZZq wqT2SI-KGDKB34XO0aw_7XdtAG8GaSwFKdCAPZgoXD2YBJZCPEX3xKpRwcdOO8Kp EHwJjyqOgzDO7iKvU8vcnwNrmxYbSW9ERBXukOXolLzeO_Jn"
-            },
-            {
-                "name": "Authority 3",
-                "hash": "AdwMgeerwtHoh-l192l60hp9wAHZFVJbLfD_UxMi70cwnZOYaRI1bKPWROc-mZZq wqT2SI-KGDKB34XO0aw_7XdtAG8GaSwFKdCAPZgoXD2YBJZCPEX3xKpRwcdOO8Kp EHwJjyqOgzDO7iKvU8vcnwNrmxYbSW9ERBXukOXolLzeO_Jn"
-            }
-        ]
         }
     ]
 }, action) {

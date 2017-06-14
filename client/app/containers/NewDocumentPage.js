@@ -1,6 +1,6 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import TopBar from '../components/topbar/TopBar';
+import NewDocumentComponent from '../components/documents/NewDocument';
 
 function mapStateToProps(state) {
   return {
@@ -9,7 +9,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {}; //bindActionCreators(CounterActions, dispatch);
+  return bindActionCreators({}, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TopBar);
+export default connect(mapStateToProps, mapDispatchToProps)(NewDocumentComponent);

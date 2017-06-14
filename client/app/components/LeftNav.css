@@ -15,8 +15,21 @@
     color: #525870;
 }
 
-.list li i {
+.list li a i {
     margin-right: 10px;
+}
+
+.list li.selected {
+    background-color: #525870;
+    color: #FFFFFF;
+}
+
+.list li.selected a {
+    color: #FFFFFF;
+}
+
+.list li.selected .bullet{
+    color: #FFF;
 }
 
 .list li:hover a {

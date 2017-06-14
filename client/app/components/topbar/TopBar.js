@@ -5,9 +5,11 @@ import styles from './TopBar.css';
 
 export default class TopBar extends Component {
     render() {
+
+
         return (
             <div className={styles.topbar}>
-                <Link to="/documents">
+                <Link to="/runtime/documents">
                     <i className="fa fa-file-text-o"></i>
                     Documents
                 </Link>
@@ -15,6 +17,13 @@ export default class TopBar extends Component {
                     <i className="fa fa-quote-right"></i>
                     Attestations
                 </Link>
+
+                <span className="float-right">
+                    <Link to="/runtime/newdoc">
+                        <i className="fa fa-plus"></i>
+                        Create New
+                    </Link>
+                </span>
             </div>
         );
     }

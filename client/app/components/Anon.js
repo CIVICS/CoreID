@@ -21,7 +21,7 @@ export default class Anon extends Component {
 
                         <input name="username" type="text" placeholder="Email Address"/>
                         <input name="password" type="password" placeholder="Password"/>
-                        <Link to="/runtime/0"><div className="button full">Login</div></Link>
+                        <Link to="/runtime/documents/0"><div className="button full">Login</div></Link>
                         <div className="text-center">
                             Don't have an account? <a onClick={ () => {this.setState({panel: 1})}}>Sign Up</a>
                         </div>
